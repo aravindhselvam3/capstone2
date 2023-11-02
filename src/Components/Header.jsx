@@ -22,7 +22,7 @@ function Header() {
               ) : (
                 <h6 style={{ marginRight: '10px' }}>Welcome</h6>
               )}
-              <Link to="/">
+              <Link to="/signin">
                 <div className="dropdown text-end">
                 <div data-bs-toggle="tooltip" data-bs-placement="top" title="Logout" id="logoutBtn">
 

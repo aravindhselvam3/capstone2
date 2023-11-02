@@ -12,20 +12,19 @@ function Login() {
   const [error, setError] = useState('');
 
   const { setUser } = useUser();
+
   const fetchUserProfile = async () => {
     try {
-      console.log("fetchong usr nme...")
+      console.log("fetching user name...");
       const response = await fetch("https://backend-fw87.onrender.com/api/users/list");
       const body = await response.json();
-      
+
       if (response.status === 200) {
-        const user = body.find(user => user.email === email); 
+        const user = body.find(user => user.email === email);
         if (user) {
-          console.log(user.name)
+          console.log(user.name);
           setUser(user.name);
-        } else {
-          setError('User not found');
-        }
+        } 
       } else {
         console.log('Failed to fetch user profile');
       }
@@ -43,7 +42,7 @@ function Login() {
       fetchUserProfile();
       navigate('/ZenClass');
     } else {
-      setError('Login Failed');
+      setError('Invalid User');
     }
   }
 
@@ -81,12 +80,12 @@ function Login() {
                 style={{ "width": "350px" }}
               />
             </div>
-            <button   type="submit" className="b col-md-12 btn btn-lg btn-block login-btn mt-4 mb-4">Login</button>
+            <button type="submit" className="b col-md-12 btn btn-lg btn-block login-btn mt-4 mb-4">Login</button>
+            {error && <p className="text-danger">{error}</p>} {/* Display error message */}
             <p>
               Don't you have an Account <Link to='/signup'>Sign Up</Link>
             </p>
           </form>
-      
         </div>
       </div>
     </div>
