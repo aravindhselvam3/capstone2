@@ -8,8 +8,8 @@ import Capstone from './Components/Capstone';
 import Sidebar from './Components/Sidebar';
 import Header from './Components/Header';
 import { Route, Routes, Link } from 'react-router-dom';
-import Login from './Components/Login/Login.jsx';
-import Signup from './Components/Login/Signup.jsx';
+import Login from './Components/Login.jsx';
+import Signup from './Components/Signup.jsx';
 import { useUser } from './UserContext';
 
 export default function Layout({ userData }) {
