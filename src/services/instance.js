@@ -1,7 +1,7 @@
 import axios from "axios";
 import getToken from "../utils/authUtils";
 
-const baseURL = "http://localhost:3001/api"
+const baseURL = "https://backend-fw87.onrender.com/api"
 
 const authInstance = axios.create({
     baseURL: baseURL,
